@@ -1,0 +1,65 @@
+CREATE DATABASE IF NOT EXISTS recursos_humanos;
+
+USE recursos_humanos;
+
+DROP TABLE IF EXISTS empregados;
+
+CREATE TABLE IF NOT EXISTS empregados (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cargo VARCHAR(100) NOT NULL,
+    salario FLOAT NOT NULL,
+    data_nascimento DATE NOT NULL,
+    numero_dependentes BIGINT,
+    email_corporativo VARCHAR(100)
+);
+
+INSERT INTO empregados (nome, cargo, salario, data_nascimento, numero_dependentes, email_corporativo) VALUES
+('Ana Silva', 'Gerente de Projetos', 7500.00, '1985-06-15', 2, 'ana.silva@empresa.com'),
+('Bruno Souza', 'Desenvolvedor', 5000.00, '1990-03-10', NULL, 'bruno.souza@empresa.com'),
+('Carlos Oliveira', 'Analista de Sistemas', 6200.00, '1988-12-20', 1, 'carlos.oliveira@empresa.com'),
+('Daniela Santos', 'Design Gráfico', 4500.00, '1992-07-25', NULL, NULL),
+('Eduardo Lima', 'Administrador de Banco de Dados', 7000.00, '1983-05-05', 3, 'eduardo.lima@empresa.com'),
+('Fernanda Rocha', 'Analista de Marketing', 4800.00, '1986-09-18', 1, NULL),
+('Gustavo Pereira', 'Engenheiro de Software', 8000.00, '1987-11-30', 2, 'gustavo.pereira@empresa.com'),
+('Helena Costa', 'Recursos Humanos', 5300.00, '1991-02-14', NULL, 'helena.costa@empresa.com'),
+('Igor Mendes', 'Suporte Técnico', 3700.00, '1993-04-23', 1, 'igor.mendes@empresa.com'),
+('Juliana Martins', 'Gerente Financeiro', 9000.00, '1982-08-09', 4, 'juliana.martins@empresa.com'),
+('Leonardo Alves', 'Desenvolvedor Mobile', 5500.00, '1989-10-11', NULL, 'leonardo.alves@empresa.com'),
+('Mariana Ferreira', 'Analista de Dados', 6000.00, '1984-01-19', 2, NULL),
+('Nicolas Ribeiro', 'Arquiteto de Soluções', 9500.00, '1981-12-01', 3, 'nicolas.ribeiro@empresa.com'),
+('Paula Andrade', 'Coordenadora de TI', 8200.00, '1985-07-06', 1, 'paula.andrade@empresa.com'),
+('Rafael Campos', 'Tester', 4000.00, '1992-03-15', NULL, 'rafael.campos@empresa.com'),
+('Sofia Moreira', 'Engenheiro de Software', 8238.00, '1987-11-30', 1, 'sofia.moreira@empresa.com'),
+('Thiago Nunes', 'Desenvolvedor', 5238.00, '1990-03-10', 1, NULL),
+('Ursula Souza', 'Analista de Sistemas', 6438.00, '1988-12-20', 0, 'ursula.souza@empresa.com'),
+('Victor Oliveira', 'Gerente de Projetos', 7738.00, '1985-06-15', 2, 'victor.oliveira@empresa.com'),
+('Yara Silva', 'Administrador de Banco de Dados', 7238.00, '1983-05-05', 3, 'yara.silva@empresa.com'),
+('Zeca Rocha', 'Analista de Marketing', 5038.00, '1986-09-18', 1, NULL),
+('André Lima', 'Engenheiro de Software', 7762.00, '1987-11-30', 2, 'andre.lima@empresa.com'),
+('Beto Santos', 'Recursos Humanos', 5538.00, '1991-02-14', NULL, 'beto.santos@empresa.com'),
+('Carlos Mendes', 'Suporte Técnico', 3938.00, '1993-04-23', 1, 'carlos.mendes@empresa.com'),
+('Denise Ferreira', 'Gerente Financeiro', 8762.00, '1982-08-09', 4, NULL),
+('Elena Martins', 'Desenvolvedor Mobile', 5262.00, '1989-10-11', 0, 'elena.martins@empresa.com'),
+('Fabio Souza', 'Analista de Dados', 5762.00, '1984-01-19', 2, 'fabio.souza@empresa.com'),
+('Gabriel Ribeiro', 'Arquiteto de Soluções', 9262.00, '1981-12-01', 3, 'gabriel.ribeiro@empresa.com'),
+('Hugo Andrade', 'Coordenadora de TI', 8438.00, '1985-07-06', 1, 'hugo.andrade@empresa.com'),
+('Isabela Campos', 'Tester', 4238.00, '1992-03-15', NULL, 'isabela.campos@empresa.com'),
+('Júlia Moreira', 'Engenheiro de Software', 7762.00, '1987-11-30', 1, 'julia.moreira@empresa.com'),
+('Kevin Nunes', 'Desenvolvedor', 5238.00, '1990-03-10', 1, 'kevin.nunes@empresa.com'),
+('Lara Souza', 'Analista de Sistemas', 6438.00, '1988-12-20', 0, 'lara.souza@empresa.com'),
+('Marcelo Oliveira', 'Gerente de Projetos', 7738.00, '1985-06-15', 2, 'marcelo.oliveira@empresa.com'),
+('Nina Silva', 'Administrador de Banco de Dados', 7238.00, '1983-05-05', 3, 'nina.silva@empresa.com'),
+('Oscar Rocha', 'Analista de Marketing', 5038.00, '1986-09-18', 1, NULL),
+('Pedro Lima', 'Engenheiro de Software', 8238.00, '1987-11-30', 2, 'pedro.lima@empresa.com'),
+('Quésia Santos', 'Recursos Humanos', 5538.00, '1991-02-14', NULL, 'quesia.santos@empresa.com'),
+('Renato Mendes', 'Suporte Técnico', 3938.00, '1993-04-23', 1, 'renato.mendes@empresa.com'),
+('Sabrina Ferreira', 'Gerente Financeiro', 8762.00, '1982-08-09', 4, NULL),
+('Tânia Martins', 'Desenvolvedor Mobile', 5262.00, '1989-10-11', 0, 'tania.martins@empresa.com'),
+('Ulisses Souza', 'Analista de Dados', 5762.00, '1984-01-19', 2, 'ulisses.souza@empresa.com'),
+('Valentina Ribeiro', 'Arquiteto de Soluções', 9262.00, '1981-12-01', 3, NULL),
+('Wagner Andrade', 'Coordenadora de TI', 8438.00, '1985-07-06', 1, 'wagner.andrade@empresa.com'),
+('Xavier Campos', 'Tester', 4238.00, '1992-03-15', NULL, 'xavier.campos@empresa.com'),
+('Yasmin Moreira', 'Engenheiro de Software', 7762.00, '1987-11-30', 1, 'yasmin.moreira@empresa.com'),
+('Zilda Nunes', 'Desenvolvedor', 5238.00, '1990-03-10', 1, 'zilda.nunes@empresa.com'),
+('Arthur Souza', 'Analista de Sistemas', 6438.00, '1988-12-20', 0, 'arthur.souza@empresa.com');
