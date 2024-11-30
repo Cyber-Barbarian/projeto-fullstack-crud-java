@@ -72,20 +72,23 @@ O H2 é um banco de dados de código aberto e leve, que roda em memória, para o
 
 Já o MySQL é um banco de dados de base de dados relacional, que roda em um servidor de base de dados e possibilita a criação de aplicativos de rede. Para usá-lo, além de importar a dependência pelo [pom.xml](..%2Fpom.xml) precisamos configurar o [application.properties](..%2Fsrc%2Fmain%2Fresources%2Fapplication.properties) para se conectar ao banco de dados MySQL, adicinando as credenciais a seguinte configuração.
 
+**ATENÇÃO** :  o hibernate.dialect tem que ser o mesmo do banco de dados escolhido, no nosso caso o MySQL 8.0 e o spring.datasource.url deve apontar para nossa database. O Context Path será o complamento de nossa url!
+
 ```text
-spring.datasource.url = jdbc:mysql://localhost:3306/users_database?useSSL=false
+spring.application.name=projeto-fullstack-crud-java
+
+spring.datasource.url = jdbc:mysql://localhost:3306/recursos_humanos?useSSL=false
 spring.datasource.username = root
 spring.datasource.password = root
 
-
 ## Hibernate Properties
 # The SQL dialect makes Hibernate generate better SQL for the chosen database
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL8Dialect
 
 # Hibernate ddl auto (create, create-drop, validate, update)
 spring.jpa.hibernate.ddl-auto = update
 
-server.servlet.context-path=/springboot-crud-rest
+server.servlet.context-path=/springboot-crud-rest-empregados
 ```
 Devemos ter o MySQL instalado e configurado, bem como preferencialmente o MySQL Workbench. Com o MySQL Workbench, podemos criar um novo banco de dados, uma nova tabela e inserir alguns dados mockados:
 
@@ -160,6 +163,9 @@ INSERT INTO empregados (nome, cargo, salario, data_nascimento, numero_dependente
 ```
 
 ![criando_users_database.png](criando_users_database.png)
+Vale ressaltar que já é possível rodar o projeto e acessar via localhost, bastando rodar o projeto e digitar no browser "http://localhost:8080/springboot-crud-rest-empregados/"
+
+Entretanto teremos como retorno uma mensagem de erro, o Spring não encontra um recurso estático solicitado (view). Por enquanto deixaremos assim mesmo. 
 
 # 03 - Criando a entidade de empregados
 JPA (ou Java Persistence API) é uma especificação oficial que descreve como deve ser o comportamento dos frameworks de persistência Java que desejarem implementá-la.
