@@ -187,3 +187,30 @@ public class Empregado {
 
 ```
 
+# 04 - Criando o repositório de empregados
+
+Em JPA (Java Persistence API), um repositório é uma **interface** que fornece métodos para realizar operações de persistência, como salvar, atualizar, deletar e buscar dados no banco de dados. 
+
+O repositório é parte integrante do padrão de design Repository, que **separa a lógica de negócios do acesso aos dados**.
+
+Em nosso caso vamos criar um repositório para a entidade Empregado através de uma interface chamada EmpregadoRepository, dentro da pasta repository. 
+
+Ele extende a interface *JpaRepository*, interface essa que define métodos necessários para realizar as operações de um CRUD.
+
+A extensão da *JpaRepository* exige a declaração da entidade e do tipo da chave primária, nesse caso *<Empregado, Long>*.
+
+À interface precisamos adicionar a anotação *@Repository*, que indica que essa interface representa um repositório, além de importar a classe de entidade.
+
+```java 
+package com.cyberbarbarian.crudEmpregados.repository;
+
+import com.cyberbarbarian.crudEmpregados.entity.Empregado;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmpregadoRepository extends JpaRepository<Empregado, Long> {
+}
+
+```
+
